@@ -7,3 +7,5 @@
 ## To allow ssh access to the resource from the internet,
 #### create a security group that ensures the resource can only be accessed via ssh from port 22
 #### reference the group in the resource by giving the argument: vpc_security_group_id the value referencing the security group's id. The value expects a list; ensure the value is encased in square brackets.
+
+## I ran into a problem connecting the key-pair i created manually on aws to my ec2 instance. This resource helped clear that out https://www.youtube.com/watch?v=lJbf0J9rRzE. This is to my future self.
