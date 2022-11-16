@@ -15,4 +15,24 @@ resource "aws_instance" "webserver" {
             systemctl enable nginx
             systemctl start nginx
             EOF
+
+    # point to the key-pair's id
+    key_name = aws_key_pair.server.id
+}
+
+# point to the key-pair's path with this resource
+resource "aws_key_pair" "server" {
+  public_key = file("root/.ssh/vm-key.pem")
+}
+
+# to allow access to this resource (nginx), you configure a security group
+resource "aws_security_group" "ssh-access" {
+  name = "ssh-access"
+  description = "allows ssh access from the internet"
+#   how it can be accessed
+ingress {
+    from_port = 22
+    to_port = 22
+    protocol = "tcp"
+}
 }
