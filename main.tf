@@ -24,7 +24,7 @@ resource "aws_instance" "webserver" {
 
 # point to the key-pair's path with this resource
 resource "aws_key_pair" "server_key" {
-  key_name   = "server-key"
+  key_name   = "server_key"
   public_key = tls_private_key.rsa.public_key_openssh
 }
 

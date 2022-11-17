@@ -1,3 +1,6 @@
+vmkey
+terraform
 *.terraform
-*.terraform.tfstate
-*terraform
+*.hcl
+*.tfstate
+*.backup
